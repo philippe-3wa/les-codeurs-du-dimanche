@@ -9,20 +9,6 @@ if (isset($_SESSION['login']))
 			if (isset($_GET['id']))
 			{
 				$ligne = intval($_GET['id']);
-				$json = file_get_contents('tasks.json');
-				$data = json_decode($json, true);
-				$list = $data['list'];
-				$count = 0;
-				$max = sizeof($list);
-				while ($count < $max && sizeof($list) == $max)
-				{
-					if ($list[$count]['id'] == $ligne)
-						unset($list[$count]);
-					$count++;
-				}
-				$data['list'] = array_values($list);
-				$json = json_encode($data);
-				file_put_contents('tasks.json', $json);
 				header('Location: index.php');
 				exit;
 			}
@@ -34,26 +20,6 @@ if (isset($_SESSION['login']))
 			if (isset($_GET['id']))
 			{
 				$ligne = intval($_GET['id']);
-				$json = file_get_contents('tasks.json');
-				$data = json_decode($json, true);
-				$list = $data['list'];
-				$newid = $data['current'];
-				$count = 0;
-				$max = sizeof($list);
-				while ($count < $max && sizeof($list) == $max)
-				{
-					if ($list[$count]['id'] == $ligne)
-					{
-						$task = $list[$count];
-						$task['id'] = $newid;
-						$list[] = $task;
-					}
-					$count++;
-				}
-				$data['current']++;
-				$data['list'] = array_values($list);
-				$json = json_encode($data);
-				file_put_contents('tasks.json', $json);
 				header('Location: index.php?page=admin&action=editer&id='.$newid);
 				exit;
 			}
@@ -90,24 +56,6 @@ if (isset($_SESSION['login']))
 				{
 					$deadline = date('d/m/Y H\hi', $time);
 					$date = date('d/m/Y H\hi');
-					$json = file_get_contents('tasks.json');
-					$data = json_decode($json, true);
-					$list = $data['list'];
-					$count = 0;
-					$max = sizeof($list);
-					$continue = true;
-					while ($count < $max && $continue)
-					{
-						if ($list[$count]['id'] == $id)
-						{
-							$list[$count] = array('title'=>$title, 'description'=>$description, 'priority'=>$priority, 'deadline'=>$deadline, 'author'=>$author, 'create'=>$date, 'id'=>$id);
-							$continue = false;
-						}
-						$count++;
-					}
-					$data['list'] = array_values($list);
-					$json = json_encode($data);
-					file_put_contents('tasks.json', $json);
 					header('Location: index.php');
 					exit;
 				}
@@ -141,15 +89,6 @@ if (isset($_SESSION['login']))
 		{
 			$deadline = date('d/m/Y H\hi', $time);
 			$date = date('d/m/Y H\hi');
-			$json = file_get_contents('tasks.json');
-			$data = json_decode($json, true);
-			$list = $data['list'];
-			$newid = $data['current'];
-			$list[] = array('title'=>$title, 'description'=>$description, 'priority'=>$priority, 'deadline'=>$deadline, 'author'=>$author, 'create'=>$date, 'id'=>$newid);
-			$data['list'] = array_values($list);
-			$data['current']++;
-			$json = json_encode($data);
-			file_put_contents('tasks.json', $json);
 			header('Location: index.php');
 			exit;
 		}
