@@ -1,0 +1,13 @@
+<div class="col-md-4">
+	<div class="task priority-<?=$task['priority']?>">
+		<div class="row">
+			<div class="col-md-8">
+				<h3 class="title" style="float:left"><?=$task['title']?></h3>
+			</div>
+			<?php require('apps/taskadmin.php'); ?>
+		</div>
+		<p class="text-muted"><?=$task['deadline']?></p>
+		<p class="desc"><?=$task['description']?></p>
+		<p class="text-muted">Created by <a href="#"><?=$task['author']?></a>, <?=$task['create']?></p>
+	</div>
+</div>
