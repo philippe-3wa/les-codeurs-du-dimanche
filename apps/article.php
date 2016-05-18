@@ -36,7 +36,7 @@ $max = sizeof($list);
 while ($count < $max)
 {
 	$task = $list[$count];
-	require('views/task.phtml');
+	require('views/article.phtml');
 	$count++;
 }
 ?>
