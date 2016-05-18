@@ -17,7 +17,23 @@ if (isset($_POST['email'], $_POST['login'], $_POST['password1'], $_POST['passwor
 		$error = 'Mot de passe trop court';
 	if (empty($error))
 	{
-		// requete sql insert
+		
+
+
+		$servername = "localhost";
+		$username = "username";
+		$db_pass = "password";
+		$dbname = "myDB";
+
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		// Check connection
+		if (!$conn)
+    		die("Connection failed: " . mysqli_connect_error());
+
+		$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+		VALUES ('John', 'Doe', 'john@example.com')";
+
 		
 		header('Location: index.php?page=login');
 		exit;
