@@ -1,28 +1,25 @@
 <?php
-if (isset($_POST['email'], $_POST['password']))
+if (isset($_POST['login'], $_POST['password']))
 {
-	$email = $_POST['email'];
+	$login = $_POST['login'];
 	$password = $_POST['password'];
-	$json = file_get_contents('users.json');
-	$list = json_decode($json, true);
-	$count = 0;
-	$max = sizeof($list);
-	while ($count < $max)
-	{
-		$user = $list[$count];
-		if ($user['email'] == $email)
-		{
-			if ($user['password'] == $password)
-			{
-				$_SESSION['login'] = $user['login'];
-				header('Location: index.php?page=admin');
-				exit;
-			}
-			else
-				$error = 'Mot de passe invalide';
-		}
-		$count++;
+
+	//requete SELECT sql
+	$link = mysql_connect('localhost', 'root', 'troiswa');
+	if (!$link) {
+   	die('Impossible de se connecter : ' . mysql_error());
 	}
-	$error = 'Email inconnu';
+
+	// Rendre la base de données users, la base courante
+	$db_selected = mysql_select_db('users', $link);
+	if (!$db_selected) {
+   	die ('Impossible de sélectionner la base de données : ' . mysql_error());
+	}
+
+	$link = mysql_connect("localhost", "root", "troiswa")
+    or die("Impossible de se connecter : " . mysql_error());
+	echo 'Connexion réussie';
+	mysql_close($link);
+
 }
 ?>
