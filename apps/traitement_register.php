@@ -15,35 +15,35 @@ if (isset($_POST['email'], $_POST['login'], $_POST['password1'], $_POST['passwor
 		$error = 'Mots de passe différents';
 	else if (strlen($password1) < 4)
 		$error = 'Mot de passe trop court';
-	if (empty($error))
-	{
-	
-		$servername = "localhost";
-		$username = "root";
-		$db_pass = "troiswa";
-		$dbname = "blog";
-
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $db_pass, $dbname);
-		// Check connection
-		if (!$conn)
-    		die("Connection failed: " . mysqli_connect_error());
-
-		$sql = "INSERT INTO users (id, login, email, password, date, role)
-		VALUES ('', 'admin', 'email@mail.fr', 'jesuisadmin', '', '1')";
-
-		if (mysqli_query($conn, $sql)){
-			$message = "Inscription correcte";
-			}
-
-			else{
-			$message = "Inscription incorrecte";
-			}
-			mysqli_close($conn);
+	else if (strlen($password1) > 20)
+		$error = 'Mot de passe trop long';
 
 
-		header('Location: index.php?page=login');
-		exit;
-	}
+				$servername = "localhost";
+				$username = "root";
+				$db_pass = "troiswa";
+				$dbname = "blog";
+
+				// Create connection
+				$conn = mysqli_connect($servername, $username, $db_pass, $dbname);
+				// Check connection
+				if (!$conn)
+		    		die("Connection failed: " . mysqli_connect_error());
+
+				$sql = "INSERT INTO users (id, login, email, password, date, role)
+				VALUES ('', '$login', '$email', '$password1', '', '0')";
+
+				if (mysqli_query($conn, $sql)){
+					$message = "Inscription correcte";
+					}
+
+					else{
+					$message = "Inscription incorrecte";
+					}
+					mysqli_close($conn);
+
+
+				header('Location: index.php?page=login');
+				exit;
 }
 ?>
