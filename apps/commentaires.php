@@ -1,3 +1,3 @@
 <?php
-	require('views/commentaire.phtml');
+	require('views/commentaires.phtml');
 ?>

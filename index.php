@@ -2,7 +2,7 @@
 session_start();
 $error = '';
 $page = 'home';
-$access = array('home', 'atricle', 'login', 'register', 'admin', 'logout');
+$access = array('home', 'atricle', 'login', 'register', 'admin', 'profile', 'logout');
 if (isset($_GET['page']))
 {
 	if (in_array($_GET['page'], $access))

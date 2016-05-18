@@ -61,6 +61,10 @@ if (isset($_SESSION['login']))
 				}
 			}
 		}
+		else
+		{
+			require('views/article_edit.phtml');
+		}
 	}
 	else if (isset($_POST['title'], $_POST['description'], $_POST['priority'], $_POST['deadline']))
 	{
@@ -92,6 +96,10 @@ if (isset($_SESSION['login']))
 			header('Location: index.php');
 			exit;
 		}
+	}
+	else
+	{
+		require('views/article_add.phtml');
 	}
 }
 else
