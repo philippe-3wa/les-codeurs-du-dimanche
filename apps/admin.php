@@ -4,5 +4,5 @@
 //	
 //}
 //else
-	require('views/admin.phtml');
+require('views/admin.phtml');
 ?>
