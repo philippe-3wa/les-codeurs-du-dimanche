@@ -1,4 +1,5 @@
 <?php
+/*
 if (isset($_SESSION['login']))
 {
 	if (isset($_GET['action']))
@@ -107,4 +108,5 @@ else
 	header('Location: index.php');
 	exit;
 }
+*/
 ?>
