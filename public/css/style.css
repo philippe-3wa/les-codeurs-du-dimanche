@@ -47,3 +47,7 @@ a.docs-comment-btn:hover,input.docs-comment-btn:hover{
 	text-decoration:none;
 	background-color:#285a86
 }
+
+.page_title{
+	text-align: center;
+}
