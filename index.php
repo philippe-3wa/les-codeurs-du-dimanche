@@ -5,7 +5,7 @@ $page = 'home';
 
 $access = array('home', 'login', 'register', 'admin', 'logout', 'article');
 
-$access = array('home', 'atricle', 'login', 'register', 'admin', 'profile', 'logout');
+$access = array('home', 'article', 'login', 'register', 'admin', 'profile', 'logout');
 
 if (isset($_GET['page']))
 {
