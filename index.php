@@ -1,6 +1,7 @@
 <?php
 session_start();
 $error = '';
+$message = '';
 $page = 'home';
 
 $access = array('home', 'article', 'login', 'register', 'admin', 'profile', 'logout');
