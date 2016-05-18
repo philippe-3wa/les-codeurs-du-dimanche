@@ -17,6 +17,7 @@ if (isset($_POST['email'], $_POST['login'], $_POST['password1'], $_POST['passwor
 		$error = 'Mot de passe trop court';
 	if (empty($error))
 	{
+		// requete sql insert
 		
 		header('Location: index.php?page=login');
 		exit;
