@@ -1,11 +1,12 @@
 <div class="artical-commentbox">
-	<h3>Leave a comment</h3>
+	<h3>Ajouter un commentaire</h3>
 	<div class="table-form">
 		<div class="comments-top-top" id="">
-		<form>
-			<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-			<textarea value="Message:" id="content-commentary" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>	
-			<input type="submit" value="Send">
+		<form method="POST">
+			<label for="commentaire"></label>
+			<textarea name="commentaire" id="commentaire" placeholder="Votre commentaire"></textarea>	
+			<input type="hidden" name="article_id" value="<?=$id?>" />
+			<input type="submit" value="Ajouter">
 		</form>
 		</div>
 	</div>
