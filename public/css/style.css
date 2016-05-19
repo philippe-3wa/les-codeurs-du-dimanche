@@ -1,5 +1,5 @@
 .img_bkg {
-	max-height: 400px;
+	max-height: 280px;
 	margin-bottom: 0;
 }
 
@@ -48,3 +48,10 @@ a.docs-comment-btn:hover,input.docs-comment-btn:hover{
 	background-color:#285a86
 }
 
+h3{
+	font-size: 15px;
+}
+
+.complete_article {
+	font-size: 11px;
+}

@@ -4,23 +4,32 @@ if (!empty($error))
 ?>
 
 <!-- single -->
-	<div class="single-page-artical">
-		<div class="artical-content">
-			<h3>Lorem Ipsum is simply dummy text</h3>
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<div class="single-page-artical">		
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div class="post-preview">
+			<a href="index.php?page=article">
+				<h2 class="post-title">Lorem Ipsum is simply dummy text</h2>
+			</a>
+			<p class="complete_article">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
-		<div class="artical-links">
+		</div>
+	</div>
+	<div class="artical-links">
 			<ul>
 				<li><small> </small><span>June 30, 2015</span></li>
 				<li><a href="#"><small class="admin"> </small><span>admin</span></a></li>
 				<li><a href="#"><small class="posts"> </small><span>View posts</span></a></li>
 			</ul>
-		</div>
-
-		<?php require('apps/commentaires.php'); ?>
-		<?php require('apps/commentaires_form.php'); ?>
 	</div>
+
+	<?php require('apps/commentaires.php'); ?>
+	<?php require('apps/commentaires_form.php'); ?>
+</div>
+</div>
+
 <!-- single -->
