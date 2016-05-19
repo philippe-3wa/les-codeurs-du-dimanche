@@ -2,6 +2,10 @@
 
 /*-- //header --*/
 /*-- header-bottom --*/
+*{
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 .single-page-artical{
 	padding:0 3.5em 3.5em 3.5em;
 	background:#fff;
@@ -56,9 +60,9 @@
 	text-align: left;
 	text-transform: capitalize;
 	padding: 3em 0 1.5em;
-	font-size:2em;
+	font-size:1.2em;
 	margin: 0;
-	font-family: LobsterTwo-Regular;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .artical-content p {
 	color: #999;
@@ -103,7 +107,7 @@
 	border: none;
 	padding:0.5em 15.1em;
 	margin: 0.8em 0 0;
-	font-family: LobsterTwo-Regular;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .table-form input[type="submit"]:hover{
 	background:#F04709;
@@ -118,8 +122,8 @@
   text-transform: capitalize;
   padding-top: 1em;
   margin: 0;
-  font-size: 1.5em;
-  font-family: LobsterTwo-Regular;
+  font-size: 1.2em;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .top-comment-left{
 	float: left;
@@ -142,7 +146,7 @@
 }
 .top-comment-right ul li a{
 	text-decoration: none;
-	font-size: 1em;
+	font-size: 0.7em;
     color: #C34C21;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -151,24 +155,24 @@
 	-ms-transition: 0.5s all;
 }
 .top-comment-right ul li a:hover{
-	color: #000;
+	color: #0085a1;
 }
 .top-comment-right p {
   color: #666;
-  font-size: 14px;
+  font-size: 11px;
   margin: 0;
   line-height: 1.8em;
 }
 .top-comment-right ul li span.left-at{
-	font-size: 1.2em;
+	font-size: 1em;
 }
 .top-comment-right ul li span.right-at{
-	font-size: 1em;
+	font-size: 0.7em;
 }
 .comments-top-top {
 	margin: 1.5em 0;
 	background: #eee;
-	padding: 2em;
+	padding: 0.5em;
 	width: 70%;
 }
 .blog-top p {
@@ -182,7 +186,7 @@
   width: 100%;
 }
 .artical-links ul li span {
-  font-size: 14px;
+  font-size: 11px;
   margin-top: 4px;
   display: inline-block;
 }
@@ -201,13 +205,13 @@
 
 	.artical-content h3 {
 	  padding: 2em 0 1.5em;
-	  font-size: 1.8em;
+	  font-size: 1.2em;
 	}
 	.comments-top-top {
 	  width: 100%;
 	}
 	.top-comment-right ul li a {
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 	.table-form input[type="submit"] {
 		padding: 0.5em 13em;
@@ -229,7 +233,7 @@
 
 	.artical-content h3 {
 	  padding: 2em 0 1em;
-	  font-size: 1.5em;
+	  font-size: 1.2em;
 	}
 	.artical-links ul li a {
 	  padding-left: 10px;
@@ -305,7 +309,7 @@
 	    margin: 6px 0;
 	}
 	.artical-content h3 {
-	  font-size: 1.1em;
+	  font-size: 1em;
 	}
 	.artical-links ul li:last-child {
 	  float: none;
