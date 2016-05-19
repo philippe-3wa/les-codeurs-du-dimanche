@@ -17,33 +17,15 @@ if (isset($_POST['email'], $_POST['login'], $_POST['password1'], $_POST['passwor
 		$error = 'Mot de passe trop court';
 	else if (strlen($password1) > 20)
 		$error = 'Mot de passe trop long';
+	if(empty($error))
+	{
+				$query = "INSERT INTO users (login, email, password,role)
+				VALUES ('$login', '$email', '$password1','0')";
 
-
-				$servername = "localhost";
-				$username = "root";
-				$db_pass = "troiswa";
-				$dbname = "blog";
-
-				// Create connection
-				$conn = mysqli_connect($servername, $username, $db_pass, $dbname);
-				// Check connection
-				if (!$conn)
-		    		die("Connection failed: " . mysqli_connect_error());
-
-				$sql = "INSERT INTO users (id, login, email, password, date, role)
-				VALUES ('', '$login', '$email', '$password1', '', '0')";
-
-				if (mysqli_query($conn, $sql)){
-					$message = "Inscription correcte";
-					}
-
-					else{
-					$message = "Inscription incorrecte";
-					}
-					mysqli_close($conn);
-
+				$res = mysqli_query($link, $query);
 
 				header('Location: index.php?page=login');
 				exit;
+	}
 }
 ?>
