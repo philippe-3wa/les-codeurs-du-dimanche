@@ -4,22 +4,28 @@ if (isset($_POST['login'], $_POST['password']))
 	$login = $_POST['login'];
 	$password = $_POST['password'];
 
-	//requete SELECT sql
-	$link = mysql_connect('localhost', 'root', 'troiswa');
-	if (!$link) {
-   	die('Impossible de se connecter : ' . mysql_error());
-	}
+	$servername = "localhost";
+	$username = "root";
+	$db_pass = "troiswa";
+	$dbname = "blog";
 
-	// Rendre la base de données users, la base courante
-	$db_selected = mysql_select_db('users', $link);
-	if (!$db_selected) {
-   	die ('Impossible de sélectionner la base de données : ' . mysql_error());
-	}
+	// Create connection
+	$conn = mysqli_connect($servername, $username, $db_pass, $dbname);
+	// Check connection
+	if (!$conn)
+		die("Connection failed: " . mysqli_connect_error());
 
-	$link = mysql_connect("localhost", "root", "troiswa")
-    or die("Impossible de se connecter : " . mysql_error());
-	echo 'Connexion réussie';
-	mysql_close($link);
+	$sql = "SELECT id, login, password, role FROM users WHERE login LIKE $login";
+	
+
+	if (mysqli_query($conn, $sql)){
+		$message = "Inscription correcte";
+		}
+
+		else{
+		$message = "Inscription incorrecte";
+		}
+		mysqli_close($conn);
 
 }
 ?>
