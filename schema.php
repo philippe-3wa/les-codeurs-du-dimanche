@@ -47,6 +47,13 @@ class File
 		}
     }
 }
+function getPath()
+{
+	$path = $_SERVER['SCRIPT_FILENAME'];
+	$path = str_replace('/schema.php', '', $path);
+	$path = explode('/', $path);
+	return array_pop($path);
+}
 function randColor()
 {
 	return sprintf('#%06X', mt_rand(0, 0xFFFFFF));
@@ -203,6 +210,7 @@ if (isset($_GET['refresh']))
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	</head>
 	<body>
+		<h1><?=getPath()?></h1>
 		<div id="chart_div"></div>
 		<script>
 			google.load('visualization', '1', {packages:['orgchart']});
@@ -233,7 +241,7 @@ if (isset($_GET['refresh']))
 						chart.draw(table, {allowHtml:true});
 					}
 				});
-			}, 1000);
+			}, 30000);
 		</script>
 	</body>
 </html>

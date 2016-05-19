@@ -11,7 +11,7 @@ if (isset($_POST['email'], $_POST['password']))
 	{
 		if ($ligne['password']==$password)
 		{
-			$_SESSION['email']=$email;
+			$_SESSION['email']=$email;/** Pascal : Il vaut mieux utiliser $ligne['email'] que $email, par soucis de lisibilité **/
 			$_SESSION['role']=$ligne['role'];
 			$_SESSION['login']=$ligne['login'];
 			$_SESSION['id']=$ligne['id'];
@@ -23,5 +23,6 @@ if (isset($_POST['email'], $_POST['password']))
 			$error = 'Mauvais mot de passe';
 		}
 	}
+	/** Pascal : Il manque un message d'erreur pour informer l'utilisateur que l'email n'est pas reconnu **/
 }
 ?>
