@@ -23,8 +23,6 @@ if (isset($_GET['id']))
 
 	require('views/article.phtml');
 	require('apps/commentaires.php');
-
-	if (isset($_SESSION['login']))
-		require('apps/commentaires_form.php');
+	require('apps/commentaires_form.php');
 }
 ?>
