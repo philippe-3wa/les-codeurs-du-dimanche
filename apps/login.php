@@ -1,5 +1,5 @@
 <?php
-if (!empty($error))
+if (!empty($error)) 
     require('apps/error.php');
 
 require('views/login.phtml');
