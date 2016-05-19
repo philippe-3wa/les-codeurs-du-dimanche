@@ -13,7 +13,7 @@
 	background-color:#ffffe0;
 	border:1px solid #dfd8c2;
 	border-radius:5px;
-	font-size:0.6em;
+	font-size:0.65em;
 }
 
 .docs-comment-btn{
@@ -49,9 +49,9 @@ a.docs-comment-btn:hover,input.docs-comment-btn:hover{
 }
 
 h3{
-	font-size: 15px;
+	font-size: 20px;
 }
 
 .complete_article {
-	font-size: 11px;
+	font-size: 15px;
 }
