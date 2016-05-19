@@ -14,6 +14,7 @@ if (isset($_POST['email'], $_POST['password']))
 			$_SESSION['email']=$email;
 			$_SESSION['role']=$ligne['role'];
 			$_SESSION['login']=$ligne['login'];
+			$_SESSION['id']=$ligne['id'];
 			header('Location: index.php');
 			exit;
 		}
