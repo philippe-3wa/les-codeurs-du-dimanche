@@ -24,42 +24,26 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="col-md-12 col-sm-12"> 
             <div class="panel panel-default academic-panel">
                 <div class="panel-body">
-                    <h3><i class="fa fa-book fa-lg"></i> My Academic Record</h3>
+                    <h3><i class="fa fa-book fa-lg"></i> Mes articles</h3>
                     <hr class="colorgraph">
                     <table class="table table-hover table-responsive">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Semester</th>
-                                <th>GPA</th>
+                                <th>Ref.Article</th>
+                                <th>Date de création</th>
+                                <th>Titre de l'article</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>John</td>
-                                <td>Carter</td>
-                                <td>7th</td>
-                                <td>9.2</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>4th</td>
-                                <td>1.6</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>200th</td>
-                                <td>6.66</td>
+                                <td><?=$article['id']?></td>
+                                <td><?=$article['date_creation']?></td>
+                                <td><?=$article['title']?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -68,137 +52,26 @@
             
             <div class="panel panel-default projects-panel">
                 <div class="panel-body">
-                    <h3><i class="fa fa-folder-open fa-lg"></i> My Projects</h3>
+                    <h3><i class="fa fa-folder-open fa-lg"></i> Mes commentaires</h3>
                     <hr class="colorgraph">
                     <table class="table table-hover table-responsive">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Semester</th>
-                                <th>GPA</th>
+                                <th>Ref.Comment</th>
+                                <th>Titre de l'article</th>
+                                <th>Commentaire</th>
+                                <th>Date du commentaire</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>John</td>
-                                <td>Carter</td>
-                                <td>7th</td>
-                                <td>9.2</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>4th</td>
-                                <td>1.6</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>200th</td>
-                                <td>6.66</td>
+                                <td><?=$comment['id']?></td>
+                                <td><?=$article['title']?></td>
+                                <td><?=$comment['content']?></td>
+                                <td><?=$comment['date_creation']?></td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-            
-            <div class="panel panel-default achievements-panel">
-                <div class="panel-body">
-                    <h3><i class="fa fa-trophy fa-lg"></i> My Achievements</h3>
-                    <hr class="colorgraph">
-                    <table class="table table-hover table-responsive">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Semester</th>
-                                <th>GPA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>John</td>
-                                <td>Carter</td>
-                                <td>7th</td>
-                                <td>9.2</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>4th</td>
-                                <td>1.6</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>200th</td>
-                                <td>6.66</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-12">
-            <div class="row">
-                <!-- Panel 2 -->
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-bullhorn fa-lg"></i> 
-                            Recent Notices
-                        </div>
-                        <div class="panel-body">
-                            <div id="notice-slider" class="carousel slide sidebar-slider" data-interval="10000" data-ride="carousel">
-                                <!-- Carousel indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#notice-slider" data-slide-to="0" class="active"></li>
-                                    <li data-target="#notice-slider" data-slide-to="1"></li>
-                                    <li data-target="#notice-slider" data-slide-to="2"></li>
-                                </ol>   
-                               <!-- Carousel items -->
-                                <div class="carousel-inner">
-                                    <div class="active item">
-                                        <h4>Notice 1</h4>
-                            			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                        <p>SSG</p>
-                                    </div>
-                                    <div class="item">
-                                        <h4>Notice 2</h4>
-                        				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                        <p>SMU</p>
-                                    </div>
-                                    <div class="item">
-                                        <h4>Notice 3</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                                        <p>NDR</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Panel 2 -->
-                <div class="col-md-12 col-sm-6 col-xs-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-file fa-lg"></i> 
-                            Recent Uploads
-                        </div>
-                        <div class="panel-body">
-                            Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan.
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
