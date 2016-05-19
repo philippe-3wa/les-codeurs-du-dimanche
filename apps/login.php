@@ -1,6 +1,6 @@
 <?php
 if (!empty($error))
-    require('views/error.phtml');
+    require('apps/error.php');
 
 require('views/login.phtml');
 ?>
