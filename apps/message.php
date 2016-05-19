@@ -1,4 +1,4 @@
 <?php
-if (!empty($error))
+if (!empty($message))
 	require('views/message.phtml');
 ?>
