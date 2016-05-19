@@ -13,14 +13,14 @@ $error = '';
 $message = '';
 $page = 'home';
 
-$access = array('home', 'article', 'login', 'register', 'admin', 'profile', 'logout');
+$access = array('home', 'article', 'login', 'register', 'admin', 'profile', 'logout', 'commentaires_action');
 
 if (isset($_GET['page']))
 {
 	if (in_array($_GET['page'], $access))
 		$page = $_GET['page'];
 }
-$access_traitement = array('login', 'register', 'admin', 'logout');
+$access_traitement = array('login', 'register', 'admin', 'logout', 'commentaires_action');
 if (in_array($page, $access_traitement))
 	require('apps/traitement_'.$page.'.php');
 require('apps/skel.php');

@@ -2,10 +2,10 @@
 	<h3>Ajouter un commentaire</h3>
 	<div class="table-form">
 		<div class="comments-top-top" id="">
-		<form method="POST">
+		<form method="POST" action="index.php?page=commentaires_action">
 			<label for="commentaire"></label>
 			<textarea name="commentaire" id="commentaire" placeholder="Votre commentaire"></textarea>	
-			<input type="hidden" name="article_id" value="<?=$id?>" />
+			<input type="hidden" name="id_article" value="<?=$id?>" />
 			<input type="submit" value="Ajouter">
 		</form>
 		</div>
