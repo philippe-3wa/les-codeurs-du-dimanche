@@ -25,10 +25,7 @@ if (isset($_SESSION['login']))
 			exit;
 		}
 	}
-	else
-	{
-		/** Pascal : Ce else est inutile :) **/
-	}
+
 }
 else
 {
