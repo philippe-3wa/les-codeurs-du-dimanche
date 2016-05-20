@@ -1,7 +1,4 @@
 <?php
-if (!empty($error))
-    require('apps/error.php');
-
 $query = 'SELECT users.id AS auteur_id, articles.id AS article_id, articles.titre, articles.contenu, articles.date, articles.auteur, users.login FROM articles
 INNER JOIN users ON articles.auteur=users.id ORDER BY articles.date DESC';
 $res = mysqli_query($link, $query);

@@ -1,8 +1,4 @@
 <?php
-if (!empty($error))
-	require('apps/error.php');
-
-
 if (isset($_GET['id']))
 {
 
