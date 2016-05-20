@@ -18,7 +18,7 @@ if (isset($_SESSION['role'], $_GET['action'], $_GET['id']))
 					$commentaire_auteur=$ligne['auteur'];
 					$commentaire_id_article=$ligne['id_article'];
 					require('views/commentaires_form_in_edit.phtml');
-				} 
+				}
 				else
 				{
 					header('Location: index.php?page=login');
@@ -26,6 +26,14 @@ if (isset($_SESSION['role'], $_GET['action'], $_GET['id']))
 				}
 			}
 	}	
+	if ($_GET['action'] == "delete")
+	{
+		$origine = intval($_GET['origine']);
+		$query = 'DELETE FROM commentaires WHERE id="'.$id_commentaire_edit.'" LIMIT 1';  
+		mysqli_query($link, $query);	
+		header('Location: index.php?page=article&id='.$origine.'');
+		exit;
+	}
 
 }
 ?>
