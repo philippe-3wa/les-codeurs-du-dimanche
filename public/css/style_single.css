@@ -21,6 +21,8 @@
 }
 .artical-links ul li{
 	display:inline-block;
+	margin : 0 10px;
+
 }
 /*.artical-links ul li:last-child{
 	float:right;

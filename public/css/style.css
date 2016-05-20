@@ -55,3 +55,7 @@ h3{
 .complete_article {
 	font-size: 15px;
 }
+
+.artical-links ul{
+	padding-left: 0;
+}
