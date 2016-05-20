@@ -1,0 +1,15 @@
+<div class="artical-commentbox">
+	<h3>Modifier un commentaire</h3>
+	<div class="table-form">
+		<div class="comments-top-top" id="">
+		<form method="POST" action="index.php?page=commentaires_action">
+			<label for="commentaire"></label>
+			<textarea name="commentaire" id="commentaire"><?=$commentaire_contenu?></textarea>	
+			<input type="hidden" name="id_commentaire" value="<?=$commentaire_id?>" />
+			<input type="hidden" name="id_article" value="<?=$commentaire_id_article?>" />
+			<input type="hidden" name="id_auteur" value="<?=$commentaire_auteur?>" />
+			<input type="submit" value="Ajouter">
+		</form>
+		</div>
+	</div>
+</div>	
