@@ -9,11 +9,11 @@ if (isset($_POST['email'], $_POST['login'], $_POST['password1'], $_POST['passwor
 		$error = 'Email non valide';
 	if (strlen($login) < 3)
 		$error = 'Login trop court ! (< 3 caractères)';
-	else if (strlen($login) > 32)
+	else if (strlen($login) > 15)
 		$error = 'Login trop long ! (> 15 caractères)';
 	if ($password1 != $password2)
 		$error = 'Mots de passe différents';
-	else if (strlen($password1) < 4)
+	else if (strlen($password1) < 6)
 		$error = 'Mot de passe trop court';
 	
 	if(empty($error))
