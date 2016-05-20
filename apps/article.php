@@ -6,7 +6,8 @@ if (isset($_GET['id']))
 
 	$query = 'SELECT users.id AS users_id, articles.id AS articles_id, 
 	articles.titre, articles.contenu, articles.date AS articles_date, 
-	articles.auteur, users.login FROM articles INNER JOIN users ON articles.auteur = users.id';
+	articles.auteur, users.login FROM articles INNER JOIN users ON articles.auteur = users.id
+	WHERE articles.id = '.$id.'';
 	$res = mysqli_query($link, $query);
 
 
