@@ -19,11 +19,7 @@ if (isset($_SESSION['role'], $_GET['action'], $_GET['id']))
 					$commentaire_id_article=$ligne['id_article'];
 					require('views/commentaires_form_in_edit.phtml');
 				}
-				else
-				{
-					header('Location: index.php?page=login');
-					exit;
-				}
+				
 			}
 	}	
 	if ($_GET['action'] == "delete")
