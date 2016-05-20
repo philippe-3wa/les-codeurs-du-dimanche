@@ -61,3 +61,7 @@ h3{
 	padding-left: 0;
 	margin-bottom: 0;
 }
+
+.artical-commentbox h3 {
+	padding-left: 15px;
+}
