@@ -50,8 +50,14 @@ a.docs-comment-btn:hover,input.docs-comment-btn:hover{
 
 h3{
 	font-size: 20px;
+	color: #0085a1;
 }
 
 .complete_article {
 	font-size: 15px;
+}
+
+.artical-links ul{
+	padding-left: 0;
+	margin-bottom: 0;
 }
