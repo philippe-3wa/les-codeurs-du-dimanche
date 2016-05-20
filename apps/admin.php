@@ -6,8 +6,6 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1)
 		$id = intval($_GET['id']);
 		$query = 'DELETE FROM articles WHERE id="'.$id.'" LIMIT 1';
 		mysqli_query($link, $query);
-		header('Location: index.php?page=index');
-		exit;
 	}
 	else
 	{
