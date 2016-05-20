@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 20 Mai 2016 à 09:26
+-- Généré le: Ven 20 Mai 2016 à 10:31
 -- Version du serveur: 5.5.47-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.14
 
@@ -27,12 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) NOT NULL,
   `contenu` varchar(1023) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `auteur` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `auteur` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `auteur` (`auteur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -50,12 +51,14 @@ INSERT INTO `articles` (`id`, `titre`, `contenu`, `date`, `auteur`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `commentaires` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `contenu` varchar(1023) NOT NULL,
-  `auteur` int(11) NOT NULL,
+  `auteur` int(11) unsigned NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_article` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_article` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_article` (`id_article`),
+  KEY `auteur` (`auteur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -74,7 +77,7 @@ INSERT INTO `commentaires` (`id`, `contenu`, `auteur`, `date`, `id_article`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `login` varchar(15) NOT NULL,
   `email` varchar(63) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -88,8 +91,25 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `password`, `date`, `role`) VALUES
-(9, 'admin', 'admin@admin.com', 'jesuisadmin', '2016-05-19 09:15:45', 0),
+(9, 'admin', 'admin@admin.com', 'jesuisadmin', '2016-05-19 09:15:45', 1),
 (10, 'test@test.fr', 'test@test.fr', 'test@test.fr', '2016-05-19 14:49:44', 0);
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `articles`
+--
+ALTER TABLE `articles`
+  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`auteur`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`auteur`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`id_article`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
