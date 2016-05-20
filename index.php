@@ -10,7 +10,6 @@ if (!$link)
 }
 
 $error = '';
-$message = '';
 $page = 'home';
 
 $access = array('home', 'article', 'login', 'register', 'admin', 'profile', 'logout', 'commentaires_action');
