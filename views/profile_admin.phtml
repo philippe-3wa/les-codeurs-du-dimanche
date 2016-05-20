@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-sm-12">
+            <div class="panel panel-default profile-panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 user-info-box">
+                            <a class="btn btn-info pull-right btn-edit" href="#" data-toggle="modal" data-target="#edit-profile">
+                                <i class="fa fa-edit"></i>
+                                Edit…
+                            </a>
+                            <h3 class="user-name">Login</h3>
+                            <div id="more-info-panel">
+                                        <p><strong><i class="fa fa-envelope"></i> E-mail: </strong><span class="user-email">user@example.com</span></p>
+                                        <p><strong><i class="fa fa-calendar"></i> Date d'inscription : </strong><span class="user-dob">01-01-1994</span></p>
+                                        <p><strong><i class="fa fa-user" aria-hidden="true"></i> Rôle : </strong><span class="user-enrollment-no">admin/user</span></p>
+                                        <p><strong><i class="fa fa-barcode" aria-hidden="true"></i> ID interne : </strong><span class="user-enrollment-no">784565</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12"> 
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3><i class="fa fa-book fa-lg"></i> Mes articles</h3>
+                    <hr class="colorgraph">
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Ref.Art</th>
+                                <th>Date de création</th>
+                                <th>Titre de l'article</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><!--<?=$article['id']?>--></td>
+                                <td><!--<?=$article['date_creation']?>--></td>
+                                <td><!--<?=$article['title']?>--></td>
+                                <td>
+                                    <div class="btn-group btn-group-xs">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="index.php?page=admin&action=editer&id="><span class="glyphicon glyphicon-pencil"></span> Editer</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="index.php?page=admin&action=supprimer&id=>"><span class="glyphicon glyphicon-remove"></span> Supprimer</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3><i class="fa fa-folder-open fa-lg"></i> Mes commentaires</h3>
+                    <hr class="colorgraph">
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Ref.Com</th>
+                                <th>Titre de l'article</th>
+                                <th>Commentaire</th>
+                                <th>Date du commentaire</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><!--<?=$comment['id']?>-->XXXXXXXXXX</td>
+                                <td><!--<?=$article['title']?>-->Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                                <td><!--<?=$comment['content']?>-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut voluptatum numquam maiores, modi quas dicta doloremque impedit corrupti et, sint odit eius illo in rerum facere dolor, eligendi! Eligendi, temporibus?</td>
+                                <td><!--<?=$comment['date_creation']?>-->dd/mm/yyyy</td>
+                                <td>
+                                    <div class="btn-group btn-group-xs">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="index.php?page=admin&action=editer&id="><span class="glyphicon glyphicon-pencil"></span> Editer</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="index.php?page=admin&action=supprimer&id=>"><span class="glyphicon glyphicon-remove"></span> Supprimer</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="edit-profile" tabindex="-1" role="dialog" aria-labelledby="edit-profile-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="form-horizontal" role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="edit-profile">Edit Profile</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="user-name">Login</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-name" name="user-name" placeholder="Login" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="user-email">E-mail Address</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="user-email" name="user-email" placeholder="E-mail Address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="exampleInputPassword1">New password</label>
+                        <div class="col-sm-10">
+                            <input name="password1" type="password" class="form-control" id="password1" placeholder="Password" required data-validation-required-message="Please enter a password.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="exampleInputPassword2">Retype Password</label>
+                        <div class="col-sm-10">
+                            <input name="password2" type="password" class="form-control" id="password2" placeholder="Retype password" required data-validation-required-message="Please enter the same password.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
