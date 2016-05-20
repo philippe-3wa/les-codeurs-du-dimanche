@@ -25,7 +25,7 @@ if (isset($_SESSION['login']))
 			}
 			else
 			{
-				$query = "INSERT INTO articles (titre, contenu, auteur) VALUES ('".$title."', '".$content."', '".$auteur."')";/** Pascal : On concatene plutot que d'utiliser des trucs obscures de php :o **/
+				$query = "INSERT INTO articles (titre, contenu, auteur) VALUES ('".$title."', '".$content."', '".$auteur."')";
 			}
 			mysqli_query($link, $query);
 
