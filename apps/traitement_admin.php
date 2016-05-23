@@ -13,8 +13,8 @@ if (isset($_SESSION['login']))
 
 	if (isset($_POST['title'], $_POST['content']))
 	{
-		$title = $_POST['title'];
-		$content = $_POST['content'];
+		$title = mysqli_real_escape_string($link,$_POST['title']);
+		$content = mysqli_real_escape_string($link,$_POST['content']);
 		$auteur = $_SESSION['id'];
 
 		if (strlen($title) < 3)

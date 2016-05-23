@@ -3,16 +3,16 @@
 		<div class="col-lg-12 col-md-12">
 		<div class="post-preview">
 			
-				<h2 class="post-title"><?=$titre?></h2>
+				<h2 class="post-title"><?=$articles['titre']?></h2>
 			
-			<p class="complete_article"><?=$contenu?></p>
+			<p class="complete_article"><?=$articles['contenu']?></p>
 		</div>
 		</div>
 	</div>
 	<div class="artical-links">
 			<ul>
-				<li><small> </small><span><?=$date?></span></li>
-				<li><a href="#"><small class="admin"> </small><span><?=$auteur?></span></a></li>
+				<li><small> </small><span><?=$articles['articles_date']?></span></li>
+				<li><a href="#"><small class="admin"> </small><span><?=$articles['auteur']?></span></a></li>
 				<li><?php require('apps/actions_admin.php'); ?></li>
 			</ul>
 	</div>

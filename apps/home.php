@@ -7,10 +7,10 @@ $res = mysqli_query($link, $query);
 	{
 		
 		$id = $ligne['article_id'];
-		$titre = $ligne['titre'];
-		$contenu = $ligne['contenu'];
+		$titre = htmlentities($ligne['titre']);
+		$contenu = htmlentities($ligne['contenu']);
 		$date = $ligne['date'];
-		$auteur = $ligne['login'];
+		$auteur = htmlentities($ligne['login']);
 		$id_auteur = $ligne['auteur_id'];
 		
 		require('views/home.phtml');
