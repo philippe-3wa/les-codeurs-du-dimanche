@@ -17,11 +17,11 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1)
 			{
 		
 				$id_article = $ligne['articles_id'];
-				$titre = $ligne['titre'];
-				$contenu = $ligne['contenu'];
+				$titre = htmlentities($ligne['titre']);
+				$contenu = htmlentities($ligne['contenu']);
 				$date = $ligne['articles_date'];
 				$id_auteur = $ligne['auteur'];
-				$auteur = $ligne['login'];
+				$auteur = htmlentities($ligne['login']);
 			}
 		require('views/article_edit.phtml');
 		}
