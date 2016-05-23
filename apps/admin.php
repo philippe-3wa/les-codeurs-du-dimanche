@@ -1,14 +1,7 @@
 <?php
 if (isset($_SESSION['role']) && $_SESSION['role'] == 1)
 {
-	if (isset($_GET['action'], $_GET['id']) && $_GET['action'] == 'supprimer')
-	{
-		$id = intval($_GET['id']);
-		$query = 'DELETE FROM articles WHERE id="'.$id.'" LIMIT 1';
-		mysqli_query($link, $query);
-	}
-	else
-	{
+
 		if (isset($_GET['action'], $_GET['id']) && $_GET['action'] == 'editer')
 		{
 			$id = intval($_GET['id']);
@@ -35,7 +28,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1)
 		else {
 			require('views/admin.phtml');
 		}
-	}
+	
 
 	
 }

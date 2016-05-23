@@ -1,6 +1,16 @@
 <?php
 if (isset($_SESSION['login']))
 {
+
+	if (isset($_GET['action'], $_GET['id']) && $_GET['action'] == 'supprimer')
+	{
+		$id = intval($_GET['id']);
+		$query = 'DELETE FROM articles WHERE id="'.$id.'" LIMIT 1';
+		mysqli_query($link, $query);
+		header('Location: index.php');
+		exit;
+	}
+
 	if (isset($_POST['title'], $_POST['content']))
 	{
 		$title = $_POST['title'];
