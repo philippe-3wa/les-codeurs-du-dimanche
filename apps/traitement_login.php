@@ -9,7 +9,7 @@ if (isset($_POST['email'], $_POST['password']))
 
 	while ($ligne = mysqli_fetch_assoc($res))
 	{
-		if ($ligne['password']==$password)
+		if (password_verify($password, $ligne['password'])) {
 		{
 			$_SESSION['email']=$ligne['email'];
 			$_SESSION['role']=$ligne['role'];
