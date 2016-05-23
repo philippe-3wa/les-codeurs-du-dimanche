@@ -28,9 +28,9 @@ if (isset($_GET['id']))
 
 	while ($ligne2 = mysqli_fetch_assoc($res2))
 	{
-		$commentaires_auteur = $ligne2['users_login'];
+		$commentaires_auteur = htmlentities($ligne2['users_login']);
 		$commentaires_auteur_id = $ligne2['users_id'];
-		$commentaires_contenu = $ligne2['commentaires_contenu'];
+		$commentaires_contenu = htmlentities($ligne2['commentaires_contenu']);
 		$commentaires_date = $ligne2['commentaires_date'];
 		$commentaires_id = $ligne2['commentaires_id'];
 
