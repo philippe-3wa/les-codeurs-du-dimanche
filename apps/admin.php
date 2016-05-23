@@ -21,7 +21,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1)
 				$contenu = htmlentities($ligne['contenu']);
 				$date = $ligne['articles_date'];
 				$id_auteur = $ligne['auteur'];
-				$auteur = htmlentities($ligne['login');
+				$auteur = htmlentities($ligne['login']);
 			}
 		require('views/article_edit.phtml');
 		}
