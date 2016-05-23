@@ -14,7 +14,7 @@ if (isset($_SESSION['role'], $_GET['action'], $_GET['id']))
 				if (($_SESSION['role'] == 1) || ($_SESSION['id'] == $ligne['auteur']))
 				{
 					$commentaire_id=$ligne['id'];
-					$commentaire_contenu=$ligne['contenu'];
+					$commentaire_contenu=htmlentities($ligne['contenu']);
 					$commentaire_auteur=$ligne['auteur'];
 					$commentaire_id_article=$ligne['id_article'];
 					require('views/commentaires_form_in_edit.phtml');
