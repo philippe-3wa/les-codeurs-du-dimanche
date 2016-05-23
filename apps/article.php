@@ -6,7 +6,7 @@ if (isset($_GET['id']))
 
 	$query = 'SELECT users.id AS users_id, articles.id AS articles_id, 
 	articles.titre, articles.contenu, articles.date AS articles_date, 
-	articles.auteur, users.login 
+	articles.auteur, users.login AS users_login 
 	FROM articles 
 	INNER JOIN users ON articles.auteur = users.id
 	WHERE articles.id = '.$id.'';
