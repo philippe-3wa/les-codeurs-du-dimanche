@@ -18,7 +18,7 @@ if (isset($_GET['page']))
 {
 
 	if (in_array($_GET['page'], $access))
-		$page = htmlspecialchars($_GET['page'], ENT_QUOTES);
+		$page = $_GET['page'];
 }
 $access_traitement = array('login', 'register', 'admin', 'logout', 'commentaires_action');
 if (in_array($page, $access_traitement))
