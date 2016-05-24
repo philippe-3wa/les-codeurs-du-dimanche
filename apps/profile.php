@@ -8,8 +8,8 @@ if ( isset($_SESSION['id']))
 
 	while ($ligne = mysqli_fetch_assoc($res))
 	{
-			$login=htmlentities($ligne['login']);
-			$email=htmlentities($ligne['email']);
+			$login=$ligne['login'];
+			$email=$ligne['email'];
 			$role=$ligne['role'];
 			$id=$ligne['id'];
 			$date=$ligne['date'];
