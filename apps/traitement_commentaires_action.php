@@ -2,7 +2,7 @@
 	if (isset($_POST['commentaire']))
 	{
 
-		$commentaire = $_POST['commentaire'];
+		$commentaire = mysqli_real_escape_string($link,$_POST['commentaire']);
 		$id_article = $_POST['id_article'];
 		$auteur = $_SESSION['id'];
 
